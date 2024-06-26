@@ -1,3 +1,6 @@
+# ATTENTION
+This is a fork from Danny Cork's Python WHOIS module which he later transferred to another maintainer.
+
 # whois
 A Python package for retrieving WHOIS information of domains.
 
