@@ -23,7 +23,7 @@ def cache_load(cf: str) -> None:
 
     try:
         CACHE = json.load(f)
-    except:
+    except Exception as e:
         pass
     f.close()
 
@@ -38,8 +38,15 @@ def cache_save(cf: str) -> None:
 def do_query(dl: List[str], force: bool = False, cache_file: Optional[str] = None, slow_down: int = 0,
              ignore_returncode: bool = False) -> str:
     k = '.'.join(dl)
+
+#    if dl:
+#        print("DEBUG: dl = " + str(dl))
+#    if k:
+#        print("DEBUG: k = " + str(k))
+
     if cache_file:
         cache_load(cache_file)
+
     if force or k not in CACHE or CACHE[k][0] < time.time() - CACHE_MAX_AGE:
         CACHE[k] = (
             int(time.time()),
@@ -54,6 +61,9 @@ def do_query(dl: List[str], force: bool = False, cache_file: Optional[str] = Non
 
 
 def _do_whois_query(dl: List[str], ignore_returncode: bool) -> str:
+#    if dl:
+#        print("DEBUG: dl = " + str(dl))
+
     if platform.system() == 'Windows':
         """
             Windows 'whois' command wrapper
@@ -74,6 +84,6 @@ def _do_whois_query(dl: List[str], ignore_returncode: bool) -> str:
         p = subprocess.Popen(['whois', '.'.join(dl)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     r = p.communicate()[0].decode(errors='ignore')
-    if not ignore_returncode and p.returncode != 0 and p.returncode != 1:
-        raise WhoisCommandFailed(r)
+#    if not ignore_returncode and p.returncode != 0 and p.returncode != 1:
+#        raise WhoisCommandFailed(r)
     return r

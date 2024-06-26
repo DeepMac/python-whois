@@ -110,7 +110,13 @@ CUSTOM_DATE_FORMATS = {
 }
 
 
-def str_to_date(text: str, tld: Optional[str] = None) -> Optional[datetime.datetime]:
+#def str_to_date(text: str, tld: Optional[str] = None) -> Optional[datetime.datetime]:
+def str_to_date(
+    text: str,
+    tld: Optional[str] = None,
+    verbose: bool = False,
+) -> Optional[datetime.datetime]:
+
     text = text.strip().lower()
 
     if not text or text == 'not defined' or text == 'n/a':

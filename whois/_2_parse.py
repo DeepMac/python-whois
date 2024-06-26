@@ -1,6 +1,7 @@
 import re
 from .exceptions import FailedParsingWhoisOutput
 from . import tld_regexpr
+from . import _1_query
 
 from typing import Any, Dict, Optional
 

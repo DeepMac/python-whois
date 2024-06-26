@@ -1,3 +1,27 @@
+# Support for IPv4 and IPv6 Address lookups
+NIC_arin = {
+    'extend': None,
+
+    'domain_name':		r'(?:NetRange|inetnum):\s?(.+)',
+
+#    'registrar':		r'Registrar:\s?(.+)',
+    'registrar':		r'ARIN',
+#    'registrant':		r'Organi(?:s|z)ation:\s?(.+)',
+    'registrant':		r'(?:Organization|org-name):\s?(.+)',
+    'registrant_country':       r'[Cc]ountry:\s?(.+)',
+
+    'creation_date':		r'(?:RegDate|created):\s?(.+)',
+    'expiration_date':		None,
+    'updated_date':		r'(?:Updated|last-modified):\s?(.+)',
+
+    'name_servers':		None,
+    'status':			None,
+#    'emails':			r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
+#####
+
+
 # Commercial TLD - Original Big 7
 com = {
     'extend': None,
@@ -85,6 +109,11 @@ ar = {
     'updated_date':             r'changed\s*:\s?(.+)',
 
     'name_servers':             r'nserver:\s*(.+)\s*',
+}
+
+# Asia
+asia = {
+    'extend': 'com'
 }
 
 
@@ -214,6 +243,11 @@ cl = {
     'name_servers':             r'Name Server:\s*(.+)\s*',
 }
 
+clothing = {
+    'extend': 'com'
+}
+
+
 club = {
     'extend': 'com',
 }
@@ -337,6 +371,11 @@ dk = {
     'emails':			None,
 }
 
+
+#  Domincan Republic
+do = {
+    'extend': 'com'
+}
 
 
 download = {
@@ -728,6 +767,12 @@ ml = {
     'emails':                   r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
 }
 
+# Mongolia
+mn = {
+    'extend': 'com'
+}
+
+
 mobi = {
     'extend': 'com',
 
@@ -845,6 +890,10 @@ nz = {
     'name_servers':             r'ns_name_[0-9]{2}:\s?(.+)',
     'status':                   r'query_status:\s?(.+)',
     'emails':                   r'[\w.-]+@[\w.-]+\.[\w]{2,4}',
+}
+
+red = {
+    'extend': 'com',
 }
 
 
@@ -1008,6 +1057,12 @@ sh = {
     'status':                  r'\nDomain Status:\s?(.+)',
 }
 
+shop = {
+    'extend': "com",
+}
+
+
+
 site = {
     'extend': 'store',
 }
@@ -1072,6 +1127,12 @@ store = {
 study = {
     'extend': 'com'
 }
+
+
+sucks = {
+    'extend': 'com'
+}
+
 
 tech = {
     'extend': 'store',
@@ -1198,6 +1259,12 @@ video = {
     'updated_date':             r'\nUpdated Date:\s?(.+)',
 }
 
+# .vip TLD
+vip = {
+    'extend': 'com'
+}
+
+
 website = {
     'extend': 'store',
 }
@@ -1241,7 +1308,7 @@ xyz = {
 }
 
 za = {
-    'extend': 'com',
+    'extend': 'com'
 }
 
 # Multiple initialization
