@@ -1,6 +1,6 @@
 """
 	Python module/library for retrieving WHOIS information of domains.
-	
+
 	By DDarko.org  ddarko@ddarko.org  http://ddarko.org/
 	License MIT  http://www.opensource.org/licenses/mit-license.php
 

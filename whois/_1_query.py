@@ -42,11 +42,6 @@ def do_query(dl: List[str], force: bool = False, cache_file: Optional[str] = Non
 			 ignore_returncode: bool = False) -> str:
 	k = '.'.join(dl)
 
-#	if dl:
-#		print("DEBUG: dl = " + str(dl))
-#	if k:
-#		print("DEBUG: k = " + str(k))
-
 	if cache_file:
 		cache_load(cache_file)
 
