@@ -18,19 +18,20 @@
 	2020-09-14 00:00:00
 
 """
+
+# Import needed functions
 from ._1_query import do_query
 from ._2_parse import do_parse, TLD_RE
 from ._3_adjust import Domain
 from .exceptions import UnknownTld, FailedParsingWhoisOutput, UnknownDateFormat, WhoisCommandFailed
-
 from typing import Optional
 import ipaddress
 
-
+# Init variablesa
 CACHE_FILE = None
 SLOW_DOWN = 0
 
-
+# Define function to query against whois
 def query(domain: str, force: bool = False, cache_file: Optional[str] = None, slow_down: int = 0, ignore_returncode: bool = False) -> Optional[Domain]:
 	"""
 		force=1				Don't use cache.

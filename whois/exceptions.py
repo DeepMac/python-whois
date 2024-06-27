@@ -1,14 +1,17 @@
+# Declare exceptions for this module.
+# TODO: ACTUALLY declare exceptions, :/
+
 class UnknownTld(Exception):
-    pass
+	pass
 
 
 class FailedParsingWhoisOutput(Exception):
-    pass
+	pass
 
 
 class UnknownDateFormat(Exception):
-    pass
+	pass
 
 
 class WhoisCommandFailed(Exception):
-    pass
+	pass
